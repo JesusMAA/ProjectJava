@@ -1,20 +1,24 @@
 package com.example.prueba.domain.models;
 
 import java.util.Calendar;
+import java.util.List;
 
-public class Habitacion extends TipoHabitacion{
+public class Habitacion extends Piso{
 
     private Long idHabitacion;
     private Calendar fechaEntrada;
     private Calendar fechaSalida;
     private int cantidadHuespedes;
 
-    public Habitacion(int idTipoHabitacion, int nombreTipoHabitacion, int valorNoche, Long idHabitacion, Calendar fechaEntrada, Calendar fechaSalida, int cantidadHuespedes) {
-        super(idTipoHabitacion, nombreTipoHabitacion, valorNoche);
+    private boolean disponible;
+
+    public Habitacion(int idPiso, int numeroPiso, List<Habitacion> habitacioneDelPiso, Long idHabitacion, Calendar fechaEntrada, Calendar fechaSalida, int cantidadHuespedes, boolean disponible) {
+        super(idPiso, numeroPiso, habitacioneDelPiso);
         this.idHabitacion = idHabitacion;
         this.fechaEntrada = fechaEntrada;
         this.fechaSalida = fechaSalida;
         this.cantidadHuespedes = cantidadHuespedes;
+        this.disponible = disponible;
     }
 
     public Long getIdHabitacion() {
@@ -47,5 +51,13 @@ public class Habitacion extends TipoHabitacion{
 
     public void setCantidadHuespedes(int cantidadHuespedes) {
         this.cantidadHuespedes = cantidadHuespedes;
+    }
+
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
     }
 }

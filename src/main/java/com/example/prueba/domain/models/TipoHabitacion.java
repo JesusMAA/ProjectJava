@@ -1,12 +1,16 @@
 package com.example.prueba.domain.models;
 
-public class TipoHabitacion {
+import java.util.Calendar;
+import java.util.List;
+
+public class TipoHabitacion extends Habitacion{
 
     private int idTipoHabitacion;
     private int nombreTipoHabitacion;
     private int valorNoche;
 
-    public TipoHabitacion(int idTipoHabitacion, int nombreTipoHabitacion, int valorNoche) {
+    public TipoHabitacion(int idPiso, int numeroPiso, List<Habitacion> habitacioneDelPiso, Long idHabitacion, Calendar fechaEntrada, Calendar fechaSalida, int cantidadHuespedes, boolean disponible, int idTipoHabitacion, int nombreTipoHabitacion, int valorNoche) {
+        super(idPiso, numeroPiso, habitacioneDelPiso, idHabitacion, fechaEntrada, fechaSalida, cantidadHuespedes, disponible);
         this.idTipoHabitacion = idTipoHabitacion;
         this.nombreTipoHabitacion = nombreTipoHabitacion;
         this.valorNoche = valorNoche;

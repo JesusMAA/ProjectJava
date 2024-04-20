@@ -6,7 +6,7 @@ import reactor.core.publisher.Mono;
 
 import java.util.Calendar;
 
-public interface HabitacionUseCase {
+public interface HotelService {
 
     public Flux<Habitacion> listarDispobibles(Long idHabitacion);
     public Flux<Habitacion> listarNoDispobibles(Long idHabitacion);
